@@ -1,0 +1,206 @@
+@import url('./reset.css');
+@import url('./common.css');
+
+/*공통스타일*/
+html{font-size: 16px;}
+body{
+    color: #555;
+}
+.title > h2{
+    color: black;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.title > p{
+    padding-top: 10px;
+    color: #555;
+}
+
+
+/* ============== header ============*/
+
+header{
+    position:fixed;
+    left:0; top:0;
+    width: 100%;
+}
+header>div{
+    padding: 50px 0;
+    width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+header>div>h1{ /* h1자체에 폰트 사이즈가 들어가있어서 font-size:0처리 해주거나 폰트사이즈를 부모인(h1)에게 먹이지않으면 단차이가 날 수 잇음 a한테는 어차피 font-size상속되니까 ㄱㅊ죵 */
+    font-size: 16px;
+}
+header>div>h1>a{
+    color: white;
+}
+
+header>div>nav{
+    display: flex;
+    gap: 60px
+;
+}
+header>div>nav>a{
+    color: white;
+    font-size: 16px;
+    padding: 0 20px;
+    display: inline-block;
+}
+
+/* 인덱스 페이지 내용*/
+
+.spot{
+    width: 100%;
+    height: 100vh; /*개념 정비필요*/
+    background: url('../imgs/img_main-spot.jpg') 0 0 / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.spot>div{
+    color: white;
+
+}
+.spot>div>b{font-size: 62px; color: inherit;}
+.spot>div>p{font-size: 18px;color: inherit; padding: 10px 0 20px;} /* 상 좌우 하 순서임:패딩값*/
+.spot>div>a{
+    color: inherit;
+    background-color: orange;
+    padding: 10px 30px;
+    display: inline-block; /*왜? 패딩때문에 어쩌구함*/
+}
+
+/*=============about================*/
+
+.about{
+    width: 1260px;
+    margin: 0 auto;
+    align-items:center;
+    text-align:center;
+    padding: 100px 0;
+}
+
+.about .title{
+}
+.about .title>h2{}
+.about .title>p{}
+
+.about .content{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px
+;
+
+}
+.about .content > figure{
+display: flex;
+  flex-direction: column;
+  align-items: center;
+;
+}
+.about .content > figure>p{
+    margin-bottom: 30px;
+    width: 140px;
+    height: 140px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.about .content > figure>p{
+    transition: 0.5s;
+}
+
+.about .content > figure>p:hover{
+    border-radius: 20%;
+    background-color: red;
+}
+.about .content >figure>figcaption{}
+/*
+==============================portfolio==========================
+*/
+
+.portfolio{
+    text-align: center;
+    background-color: #eee;
+    padding: 100px 0;
+}
+
+.portfolio .title, /*,를 쓰면 다중, 여러개? 한테 속성 적용 가능 어쩌구..*/
+.portfolio .content{
+    width: 1300px; margin:0 auto;
+    padding: 0 20px;
+}
+
+.title{
+    padding-bottom: 70px;
+}
+.portfolio .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /*2개 = 자동으로 끝, 3개넣으면 하나가 가운데 추가됨 갭쓸필요x*/
+    margin-top: 60px;
+}
+
+.portfolio .content>figure{
+    flex: 0 0 30%;
+    margin-bottom: 2%;    /*width:30%;로 써도 됨 */
+
+}
+.portfolio .content>figure>p{
+    height: 300px;
+    overflow: hidden;
+}
+.portfolio .content>figure>p>img{
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.portfolio .content>figure>p>img{
+    width: 100%; transition:0.5s;
+}
+.portfolio .content>figure:hover >p>img{
+    transform:scale(1.2);
+}
+
+.portfolio .content>figure>figcaption{
+    line-height: 160%;
+}
+.portfolio .content>figure>figcaption>b{
+    font-size: 24px;
+    color: black;
+}
+.portfolio .content>figure>figcaption>p{
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.spot>div>a{
+    transition: 0.5s;
+}
+.spot>div>a:hover{
+   background-color: red;
+}
+
+
+/* ===========================contact==========================*/
+.contact{
+    background-color: gray;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.contact h2,
+.contact p{color: white;} /*이런식으로 적으면 공통명령됨!*/
+
+.contact .content{
+    width: 1300px;
+    margin: 30px auto 0 auto;
+}
